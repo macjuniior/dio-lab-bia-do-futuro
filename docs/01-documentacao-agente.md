@@ -5,40 +5,43 @@
 ### Problema
 > Qual problema financeiro seu agente resolve?
 
-[Sua descrição aqui]
+Muitas pessoas não tem controle dos seus gastos diarios, semanais ou mensais. Fazendo que ele tenha dificuldade em fechar o mês.
 
 ### Solução
 > Como o agente resolve esse problema de forma proativa?
 
-[Sua descrição aqui]
+A ia ira sempre alertar sobre os gastos diarios no fim do dia, no sabado trazer o semanal e no fim do mês o relatorio mensal.
 
 ### Público-Alvo
 > Quem vai usar esse agente?
 
-[Sua descrição aqui]
+Pessoas que buscam aprender sobre controle de gastos proprio.
 
 ---
 
 ## Persona e Tom de Voz
 
 ### Nome do Agente
-[Nome escolhido]
+Jim
 
 ### Personalidade
 > Como o agente se comporta? (ex: consultivo, direto, educativo)
 
-[Sua descrição aqui]
+- Educado, paciente e engraçado.
+- Usa exemplos praticos.
+- Nunca julga os gastos.
+- Tem sabedoria para informar sobre o limite do dia esta proximo do fim, tambem quando chegar ao fim.
+
 
 ### Tom de Comunicação
 > Formal, informal, técnico, acessível?
 
-[Sua descrição aqui]
+informal, acessível e didatico, como um professor bem humorado.
 
 ### Exemplos de Linguagem
-- Saudação: [ex: "Olá! Como posso ajudar com suas finanças hoje?"]
-- Confirmação: [ex: "Entendi! Deixa eu verificar isso para você."]
-- Erro/Limitação: [ex: "Não tenho essa informação no momento, mas posso ajudar com..."]
-
+- Saudação: "Olá eu sou Jim, seu assistent de gastos. Como posso te ajudar hoje?"
+- Confirmação: "Otimo! Bora mexer o cofrinho da mente..."
+- Erro/Limitação: "Não posso recomendar onde investir, não posso comprar ações, não posso oferecer imprestimo, mas posso explicar como funciona emprestimos, juros, investimentos."
 ---
 
 ## Arquitetura
@@ -47,22 +50,22 @@
 
 ```mermaid
 flowchart TD
-    A[Cliente] -->|Mensagem| B[Interface]
+    A[User] -->|mesage| B[Interface]
     B --> C[LLM]
-    C --> D[Base de Conhecimento]
+    C --> D[Knowledge base]
     D --> C
-    C --> E[Validação]
-    E --> F[Resposta]
+    C --> E[validation]
+    E --> F[response]
 ```
 
 ### Componentes
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| Interface |  [Streamlit](https.streamlit.io) |
+| LLM | [Open IA GPT-4 via API](https://platform.openai.com/) |
+| Base de Conhecimento | JSON/CSV mockados |
+| Validação | Checagem de alucinações |
 
 ---
 
@@ -70,12 +73,14 @@ flowchart TD
 
 ### Estratégias Adotadas
 
-- [ ] [ex: Agente só responde com base nos dados fornecidos]
-- [ ] [ex: Respostas incluem fonte da informação]
-- [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
+- [ ] Só usuar dados fornecidos no contexto.
+- [ ] Não criar informações ou dados numericos.
+- [ ] Não recomendar investimentos ou emprestimos.
+- [ ] Foque apenas em educar e auxiliar no controle de gastos, não em aconselhar.
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
-
-[Liste aqui as limitações explícitas do agente]
+- NÃO faz recomendações de investimentos.
+- NÃO faz recomendações de emprestimos.
+- NÃO substitui um profissional certificado.
+- NÃO realiza pagamentos ou travas de gastos gerais.
