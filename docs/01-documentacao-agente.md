@@ -73,10 +73,10 @@ flowchart TD
 
 ### Estratégias Adotadas
 
-- [ ] Só usuar dados fornecidos no contexto.
-- [ ] Não criar informações ou dados numericos.
-- [ ] Não recomendar investimentos ou emprestimos.
-- [ ] Foque apenas em educar e auxiliar no controle de gastos, não em aconselhar.
+- [X] Só usuar dados fornecidos no contexto.
+- [X] Não criar informações ou dados numericos.
+- [X] Não recomendar investimentos ou emprestimos.
+- [X] Foque apenas em educar e auxiliar no controle de gastos, não em aconselhar.
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
